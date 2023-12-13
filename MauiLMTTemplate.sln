@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiLMTTemplate", "MauiLMTTemplate\MauiLMTTemplate.csproj", "{23840677-5A5B-4739-B9C3-D7797401A720}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23840677-5A5B-4739-B9C3-D7797401A720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23840677-5A5B-4739-B9C3-D7797401A720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23840677-5A5B-4739-B9C3-D7797401A720}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{23840677-5A5B-4739-B9C3-D7797401A720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23840677-5A5B-4739-B9C3-D7797401A720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23840677-5A5B-4739-B9C3-D7797401A720}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {147772ED-6970-43DE-8477-5F63A18C2CAF}
+	EndGlobalSection
+EndGlobal

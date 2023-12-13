@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiLMTTemplate.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiLMTTemplate"
+    xmlns:views="clr-namespace:MauiLMTTemplate.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MauiLMTTemplate">
+
+    <FlyoutItem >
+        <ShellContent ContentTemplate="{DataTemplate views:MainPageView}" Route="Login" />
+    </FlyoutItem>
+
+</Shell>
