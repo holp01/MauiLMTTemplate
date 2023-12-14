@@ -9,7 +9,7 @@
     Title="MauiLMTTemplate">
 
     <FlyoutItem >
-        <ShellContent ContentTemplate="{DataTemplate views:LoginPageView}" Route="Login" />
+        <ShellContent ContentTemplate="{DataTemplate views:LoginView}" Route="Login" />
     </FlyoutItem>
 
 </Shell>

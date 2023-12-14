@@ -56,7 +56,7 @@ namespace MauiLMTTemplate
             //Add all your Views here - All Views should be Transient.
 
             app.Services.AddTransient<MainPageView>();
-            app.Services.AddTransient<LoginPageView>();
+            app.Services.AddTransient<LoginView>();
 
             return app;
         }

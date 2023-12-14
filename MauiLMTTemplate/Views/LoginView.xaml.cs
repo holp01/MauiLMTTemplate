@@ -2,9 +2,9 @@ using MauiLMTTemplate.ViewModels;
 
 namespace MauiLMTTemplate.Views;
 
-public partial class LoginPageView : ContentPageBase
+public partial class LoginView : ContentPageBase
 {
-    public LoginPageView(LoginViewModel viewModel)
+    public LoginView(LoginViewModel viewModel)
     {
         BindingContext = viewModel;
         InitializeComponent();
