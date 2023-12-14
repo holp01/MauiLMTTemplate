@@ -20,5 +20,11 @@ namespace MauiLMTTemplate.ViewModels
             
         }
 
+        public override Task InitializeAsync()
+        {
+            //OPTIONAL: Code here if needed to make an Api call, for example, for the project detail using the Id.
+            return base.InitializeAsync();
+            
+        }
     }
 }
