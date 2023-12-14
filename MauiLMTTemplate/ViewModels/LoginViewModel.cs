@@ -17,23 +17,26 @@ namespace MauiLMTTemplate.ViewModels
         private string _password;
 
         public LoginViewModel(INavigationService navigationService)
-            :base(navigationService)
+            : base(navigationService)
         {
-            
+
         }
+
         public override Task InitializeAsync()
         {
             return Task.CompletedTask;
         }
 
         [RelayCommand]
-        public async Task SignInAsync()
+        private async Task SignInAsync()
         {
             await IsBusyFor(
                 async () =>
                 {
                     await Task.Delay(10);
                 });
+
+            await _navigationService.NavigateToAsync("//Main/Projects");
         }
     }
 }

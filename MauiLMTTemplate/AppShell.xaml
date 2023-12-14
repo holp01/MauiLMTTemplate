@@ -12,4 +12,7 @@
         <ShellContent ContentTemplate="{DataTemplate views:LoginView}" Route="Login" />
     </FlyoutItem>
 
+    <TabBar Route="Main">
+        <ShellContent Title="PROJECTS" Route="Projects" ContentTemplate="{DataTemplate views:ProjectsView}" />
+    </TabBar>
 </Shell>
