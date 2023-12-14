@@ -1,5 +1,6 @@
 ﻿using MauiLMTTemplate.Models.Projects;
 using MauiLMTTemplate.ViewModels.Base;
+using MauiLMTTemplate.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -52,6 +53,7 @@ namespace MauiLMTTemplate.ViewModels
                     await Task.Delay(10);
                 });
 
+            await _navigationService.NavigateToAsync("ProjectDetail", new Dictionary<string, object> { { "Project", project } });
         }
     }
 }

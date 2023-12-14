@@ -1,4 +1,6 @@
-﻿namespace MauiLMTTemplate
+﻿using MauiLMTTemplate.Views;
+
+namespace MauiLMTTemplate
 {
     public partial class AppShell : Shell
     {
@@ -15,6 +17,7 @@
         private static void InitializeRouting()
         {
             //Add your Views Routing here
+            Routing.RegisterRoute("ProjectDetail", typeof(ProjectDetailView));
         }
     }
 }

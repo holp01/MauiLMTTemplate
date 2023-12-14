@@ -50,6 +50,7 @@ namespace MauiLMTTemplate
             app.Services.AddSingleton<MainPageViewModel>();
             app.Services.AddSingleton<LoginViewModel>();
             app.Services.AddSingleton<ProjectViewModel>();
+            app.Services.AddSingleton<ProjectDetailViewModel>();
 
             return app;
         }
@@ -61,6 +62,7 @@ namespace MauiLMTTemplate
             app.Services.AddTransient<MainPageView>();
             app.Services.AddTransient<LoginView>();
             app.Services.AddTransient<ProjectsView>();
+            app.Services.AddTransient<ProjectDetailView>();
 
             return app;
         }
