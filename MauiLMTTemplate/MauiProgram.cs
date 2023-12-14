@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui;
+using MauiLMTTemplate.Services.Authentication;
 using MauiLMTTemplate.Services.Settings;
 using MauiLMTTemplate.ViewModels;
 using MauiLMTTemplate.Views;
@@ -39,6 +40,7 @@ namespace MauiLMTTemplate
 
             app.Services.AddSingleton<INavigationService, NavigationService>();
             app.Services.AddSingleton<ISettingsService, SettingsService>();
+            app.Services.AddSingleton<IAuthenticationService, AuthenticationService>();
 
             return app;
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MauiLMTTemplate.Services.Authentication
 {
-    internal class AuthenticationService : IAuthenticationService
+    public class AuthenticationService : IAuthenticationService
     {
         public AuthenticationService()
         {
