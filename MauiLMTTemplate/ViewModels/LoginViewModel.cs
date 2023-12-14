@@ -1,4 +1,5 @@
-﻿using MauiLMTTemplate.ViewModels.Base;
+﻿using MauiLMTTemplate.Services.Authentication;
+using MauiLMTTemplate.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +17,13 @@ namespace MauiLMTTemplate.ViewModels
         [ObservableProperty]
         private string _password;
 
-        public LoginViewModel(INavigationService navigationService)
+        private readonly IAuthenticationService _authenticationService;
+
+        public LoginViewModel(INavigationService navigationService,
+            IAuthenticationService authenticationService)
             : base(navigationService)
         {
-
+            _authenticationService = authenticationService;
         }
 
         public override Task InitializeAsync()
@@ -34,9 +38,11 @@ namespace MauiLMTTemplate.ViewModels
                 async () =>
                 {
                     await Task.Delay(10);
-                });
 
-            await _navigationService.NavigateToAsync("//Main/Projects");
+                    //Change this to whatever implementation you prefer
+                    if (await _authenticationService.LoginUserNamePassword(UserName, Password))
+                        await _navigationService.NavigateToAsync("//Main/Projects");
+                });
         }
     }
 }

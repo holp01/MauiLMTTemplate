@@ -44,7 +44,6 @@ namespace MauiLMTTemplate.ViewModels
 
                     _projects.ReloadData(projects);
                 });
-
         }
 
         [RelayCommand]
@@ -54,9 +53,8 @@ namespace MauiLMTTemplate.ViewModels
                 async () =>
                 {
                     await Task.Delay(10);
+                    await _navigationService.NavigateToAsync("ProjectDetail", new Dictionary<string, object> { { "Project", project } });
                 });
-
-            await _navigationService.NavigateToAsync("ProjectDetail", new Dictionary<string, object> { { "Project", project } });
         }
     }
 }
