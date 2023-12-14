@@ -24,10 +24,13 @@ namespace MauiLMTTemplate.ViewModels
 
         public override async Task InitializeAsync()
         {
+            //+OPTIONAL: If makes sense to repeat the initialize, after entering this page the first time, comment the code below
             if (IsInitialized)
                 return;
 
             IsInitialized = true;
+            //-OPTIONAL
+
             await IsBusyFor(
                 async () =>
                 {

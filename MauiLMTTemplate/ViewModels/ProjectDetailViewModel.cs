@@ -15,16 +15,15 @@ namespace MauiLMTTemplate.ViewModels
         private Project _Project;
 
         public ProjectDetailViewModel(INavigationService navigationService)
-            :base(navigationService)
+            : base(navigationService)
         {
-            
+
         }
 
-        public override Task InitializeAsync()
+        public override async Task InitializeAsync()
         {
             //OPTIONAL: Code here if needed to make an Api call, for example, for the project detail using the Id.
-            return base.InitializeAsync();
-            
+            await base.InitializeAsync();
         }
     }
 }
