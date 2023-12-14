@@ -46,6 +46,7 @@ namespace MauiLMTTemplate
             //Add all your ViewModels here
 
             app.Services.AddSingleton<MainPageViewModel>();
+            app.Services.AddSingleton<LoginViewModel>();
 
             return app;
         }
@@ -55,6 +56,7 @@ namespace MauiLMTTemplate
             //Add all your Views here - All Views should be Transient.
 
             app.Services.AddTransient<MainPageView>();
+            app.Services.AddTransient<LoginPageView>();
 
             return app;
         }
