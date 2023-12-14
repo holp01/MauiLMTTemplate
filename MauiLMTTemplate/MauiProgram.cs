@@ -20,7 +20,7 @@ namespace MauiLMTTemplate
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 })
-                .RegisterAppServices()
+                .RegisterServices()
                 .RegisterViewModels()
                 .RegisterViews();
 
@@ -31,8 +31,11 @@ namespace MauiLMTTemplate
             return builder.Build();
         }
 
-        public static MauiAppBuilder RegisterAppServices(this MauiAppBuilder app)
+        public static MauiAppBuilder RegisterServices(this MauiAppBuilder app)
         {
+            //Add all you Services here
+
+            app.Services.AddSingleton<INavigationService, NavigationService>();
             app.Services.AddSingleton<ISettingsService, SettingsService>();
 
             return app;
@@ -40,6 +43,8 @@ namespace MauiLMTTemplate
 
         public static MauiAppBuilder RegisterViewModels(this MauiAppBuilder app)
         {
+            //Add all your ViewModels here
+
             app.Services.AddSingleton<MainPageViewModel>();
 
             return app;
@@ -47,7 +52,9 @@ namespace MauiLMTTemplate
 
         public static MauiAppBuilder RegisterViews(this MauiAppBuilder app)
         {
-            app.Services.AddSingleton<MainPageView>();
+            //Add all your Views here - All Views should be Transient.
+
+            app.Services.AddTransient<MainPageView>();
 
             return app;
         }

@@ -15,11 +15,15 @@ namespace MauiLMTTemplate.ViewModels.Base
         [ObservableProperty]
         private bool _isInitialized;
 
-        public IAsyncRelayCommand InitializeAsyncCommand { get; }
+        public IAsyncRelayCommand _initializeAsyncCommand { get; }
 
-        public ViewModelBase()
+        public INavigationService _navigationService { get; }
+
+        public ViewModelBase(INavigationService navigationService)
         {
-            InitializeAsyncCommand =
+            _navigationService = navigationService;
+
+            _initializeAsyncCommand =
                 new AsyncRelayCommand(
                     async () =>
                     {

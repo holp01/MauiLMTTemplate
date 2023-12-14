@@ -15,7 +15,9 @@ namespace MauiLMTTemplate.ViewModels
         [ObservableProperty]
         private string _location;
 
-        public MainPageViewModel(ISettingsService settingsService)
+        public MainPageViewModel(ISettingsService settingsService,
+            INavigationService navigationService)
+            : base(navigationService)
         {
             _settingsService = settingsService;
         }

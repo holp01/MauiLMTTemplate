@@ -23,7 +23,7 @@ namespace MauiLMTTemplate.Views
                 return;
             }
 
-            await ivmb.InitializeAsyncCommand.ExecuteAsync(null);
+            await ivmb._initializeAsyncCommand.ExecuteAsync(null);
         }
     }
 }

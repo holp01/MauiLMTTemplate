@@ -2,7 +2,9 @@
 {
     public interface IViewModelBase : IQueryAttributable
     {
-        public IAsyncRelayCommand InitializeAsyncCommand { get; }
+        public INavigationService _navigationService { get; }
+
+        public IAsyncRelayCommand _initializeAsyncCommand { get; }
 
         public bool IsBusy { get; }
 
