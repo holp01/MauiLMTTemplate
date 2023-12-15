@@ -48,7 +48,7 @@ namespace MauiLMTTemplate.ViewModels
         }
 
         [RelayCommand]
-        private async Task ExpenseTappedAsync(Project project)
+        private async Task ProjectTappedAsync(Project project)
         {
             await IsBusyFor(
                 async () =>
