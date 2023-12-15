@@ -14,5 +14,6 @@
 
     <TabBar Route="Main">
         <ShellContent Title="PROJECTS" Route="Projects" ContentTemplate="{DataTemplate views:ProjectsView}" />
+        <ShellContent Title="EXPENSES" Route="Expenses" ContentTemplate="{DataTemplate views:ExpenseView}" />
     </TabBar>
 </Shell>

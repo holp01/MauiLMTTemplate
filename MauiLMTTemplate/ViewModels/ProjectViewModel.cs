@@ -34,6 +34,7 @@ namespace MauiLMTTemplate.ViewModels
             await IsBusyFor(
                 async () =>
                 {
+                    await Task.Delay(5000);
                     //Simulate api call
                     var projects = new List<Project>()
                     {
@@ -47,7 +48,7 @@ namespace MauiLMTTemplate.ViewModels
         }
 
         [RelayCommand]
-        private async Task ProjectTappedAsync(Project project)
+        private async Task ExpenseTappedAsync(Project project)
         {
             await IsBusyFor(
                 async () =>
