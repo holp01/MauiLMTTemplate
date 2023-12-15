@@ -9,6 +9,14 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <Style
+                ApplyToDerivedTypes="True"
+                CanCascade="True"
+                TargetType="ActivityIndicator">
+            </Style>
+
         </ResourceDictionary>
+      
     </Application.Resources>
 </Application>
