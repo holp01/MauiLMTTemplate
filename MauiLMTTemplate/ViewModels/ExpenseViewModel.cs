@@ -14,6 +14,9 @@ namespace MauiLMTTemplate.ViewModels
 
         public IReadOnlyList<Expense> Expenses => _expenses;
 
+        [ObservableProperty]
+        private Expense _selectedExpense;
+
         public ExpenseViewModel(INavigationService navigationService)
             : base(navigationService)
         {
@@ -54,6 +57,8 @@ namespace MauiLMTTemplate.ViewModels
                     await Task.Delay(10);
                     await _navigationService.NavigateToAsync("ExpenseDetail", new Dictionary<string, object> { { "Expense", expense } });
                 });
+
+            SelectedExpense = null;
         }
     }
 }

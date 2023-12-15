@@ -5,14 +5,15 @@
              xmlns:viewmodels="clr-namespace:MauiLMTTemplate.ViewModels"
              xmlns:views="clr-namespace:MauiLMTTemplate.Views"
              xmlns:models="clr-namespace:MauiLMTTemplate.Models.Expenses"
-             x:DataType="viewmodels:ProjectViewModel"
+             x:DataType="viewmodels:ExpenseViewModel"
              Title="ExpenseView">
 
     <VerticalStackLayout>
-        <CollectionView ItemsSource="{Binding Expenses}" 
-                     SelectionMode="Single"
-                     SelectionChangedCommand="{Binding ExpenseTappedCommand}"
-                     SelectionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=SelectedItem}">
+        <CollectionView ItemsSource="{Binding Expenses}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedExpense, Mode=TwoWay}"
+                        SelectionChangedCommand="{Binding ExpenseTappedCommand}"
+                        SelectionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=SelectedItem}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Expense">
                     <Frame BorderColor="Gray" CornerRadius="5" Padding="10" Margin="10">

@@ -55,6 +55,7 @@ namespace MauiLMTTemplate
 
             //Normally detail pages view models should be transient, it always depends on what you want the Injection to look like for your ViewModel
             app.Services.AddTransient<ProjectDetailViewModel>();
+            app.Services.AddTransient<ExpenseDetailViewModel>();
 
             return app;
         }
@@ -67,6 +68,7 @@ namespace MauiLMTTemplate
             app.Services.AddTransient<ProjectsView>();
             app.Services.AddTransient<ProjectDetailView>();
             app.Services.AddTransient<ExpenseView>();
+            app.Services.AddTransient<ExpenseDetailView>();
 
             return app;
         }
