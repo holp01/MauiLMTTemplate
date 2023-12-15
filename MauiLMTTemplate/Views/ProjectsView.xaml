@@ -15,14 +15,23 @@
                         SelectionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=SelectedItem}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Project">
-                    <Frame BorderColor="Gray" CornerRadius="5" Padding="10" Margin="10">
+                    <Border Stroke="Gray"
+                            StrokeShape="RoundRectangle 5" 
+                            Padding="10" 
+                            Margin="10">
                         <StackLayout>
                             <Label Text="{Binding Name}" FontAttributes="Bold" />
                             <Label Text="{Binding Description}" />
                         </StackLayout>
-                    </Frame>
+                    </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <ActivityIndicator
+            HorizontalOptions="Center"
+            IsRunning="{Binding IsBusy}"
+            IsVisible="{Binding IsBusy}"
+            VerticalOptions="Center"
+            Color="{StaticResource LightGreenColor}"/>
     </VerticalStackLayout>
 </views:ContentPageBase>
