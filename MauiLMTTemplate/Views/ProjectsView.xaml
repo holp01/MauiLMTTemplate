@@ -10,6 +10,7 @@
     <VerticalStackLayout>
         <CollectionView ItemsSource="{Binding Projects}" 
                         SelectionMode="Single"
+                        SelectedItem="{Binding SelectedProject, Mode=TwoWay}"
                         SelectionChangedCommand="{Binding ProjectTappedCommand}"
                         SelectionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=SelectedItem}">
             <CollectionView.ItemTemplate>

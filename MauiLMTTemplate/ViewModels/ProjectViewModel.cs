@@ -16,6 +16,9 @@ namespace MauiLMTTemplate.ViewModels
 
         public IReadOnlyList<Project> Projects => _projects;
 
+        [ObservableProperty]
+        private Project _selectedProject;
+
         public ProjectViewModel(INavigationService navigationService)
             : base(navigationService)
         {
@@ -34,8 +37,8 @@ namespace MauiLMTTemplate.ViewModels
             await IsBusyFor(
                 async () =>
                 {
-                    await Task.Delay(5000);
                     //Simulate api call
+                    await Task.Delay(5000);
                     var projects = new List<Project>()
                     {
                         new Project { Id = 1, Name = "Project 1", Description = "This is the first project." },
@@ -56,6 +59,9 @@ namespace MauiLMTTemplate.ViewModels
                     await Task.Delay(10);
                     await _navigationService.NavigateToAsync("ProjectDetail", new Dictionary<string, object> { { "Project", project } });
                 });
+
+            //Unselect Project due to SelectionMode
+            SelectedProject = null;
         }
     }
 }
