@@ -6,7 +6,7 @@
              xmlns:views="clr-namespace:MauiLMTTemplate.Views"
              xmlns:models="clr-namespace:MauiLMTTemplate.Models.Projects"
              x:DataType="viewmodels:ProjectViewModel"
-             Title="ProjectsView">
+             Title="Projects">
     <VerticalStackLayout>
         <CollectionView ItemsSource="{Binding Projects}" 
                         SelectionMode="Single"
@@ -17,11 +17,18 @@
                 <DataTemplate x:DataType="models:Project">
                     <Border Stroke="Gray"
                             StrokeShape="RoundRectangle 5" 
-                            Padding="10" 
-                            Margin="10">
+                            Padding="12" 
+                            Margin="10"
+                            BackgroundColor="White"
+                            HorizontalOptions="FillAndExpand">
                         <StackLayout>
-                            <Label Text="{Binding Name}" FontAttributes="Bold" />
-                            <Label Text="{Binding Description}" />
+                            <Label Text="{Binding Name}" 
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="{StaticResource Primary}"/>
+                            <Label Text="{Binding Description}" 
+                                   FontSize="Small" 
+                                   TextColor="Gray" />
                         </StackLayout>
                     </Border>
                 </DataTemplate>

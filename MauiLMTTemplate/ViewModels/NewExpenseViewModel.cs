@@ -58,7 +58,7 @@ namespace MauiLMTTemplate.ViewModels
         [RelayCommand]
         private async Task SaveExpenseAsync()
         {
-
+            await _navigationService.NavigateToAsync("..");
         }
 
         private async Task<Stream?> CaptureOrSelectImage()
