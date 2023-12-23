@@ -65,10 +65,40 @@ namespace MauiLMTTemplate.ViewModels
         {
             try
             {
-                FileResult photo = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
+                // Ask the user if they want to use the camera or pick from the gallery
+                string action = await Shell.Current.DisplayActionSheet(
+                    "Add Photo",
+                    "Cancel",
+                    null,
+                    "Take Photo",
+                    "Pick from Gallery");
+
+                FileResult photo = null;
+
+                if (action == "Take Photo")
                 {
-                    Title = "Please pick a photo"
-                });
+                    // Check if the camera is available
+                    if (MediaPicker.Default.IsCaptureSupported)
+                    {
+                        photo = await MediaPicker.CapturePhotoAsync();
+                    }
+                    else
+                    {
+                        _logger.LogError("Camera not available");
+                        return null;
+                    }
+                }
+                else if (action == "Pick from Gallery")
+                {
+                    photo = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
+                    {
+                        Title = "Please pick a photo"
+                    });
+                }
+                else
+                {
+                    return null; // User cancelled or tapped outside the action sheet
+                }
 
                 if (photo != null)
                 {
