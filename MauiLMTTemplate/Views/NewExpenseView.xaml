@@ -26,8 +26,8 @@
             <Entry Placeholder="Description"
                    Text="{Binding NewExpense.Description, Mode=TwoWay}" />
 
-            <!--<Button Text="Save Expense"
-                    Command="{Binding SaveExpenseCommand}" />-->
+            <Button Text="Save Expense"
+                    Command="{Binding SaveExpenseCommand}" />
             
         </VerticalStackLayout>
     </ScrollView>

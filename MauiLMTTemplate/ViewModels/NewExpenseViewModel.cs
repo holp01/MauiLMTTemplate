@@ -49,9 +49,16 @@ namespace MauiLMTTemplate.ViewModels
                 // Update the Amount in the CreateExpense model
                 if (extractedAmount.HasValue)
                 {
+                    NewExpense.Amount = extractedAmount.Value;
                     Amount = extractedAmount.Value;
                 }
             }
+        }
+
+        [RelayCommand]
+        private async Task SaveExpenseAsync()
+        {
+
         }
 
         private async Task<Stream?> CaptureOrSelectImage()
