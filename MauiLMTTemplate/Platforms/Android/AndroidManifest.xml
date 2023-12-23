@@ -1,9 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-	<application android:allowBackup="true" android:icon="@mipmap/appicon" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true"></application>
+	<application android:allowBackup="true" android:icon="@mipmap/appicon" android:supportsRtl="true">
+		<activity android:name="microsoft.identity.client.BrowserTabActivity" android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="msal35610457-7107-4d3d-a3d9-f1f7ffaaf904" android:host="auth" />
+			</intent-filter>
+		</activity>
+	</application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	
 	<uses-permission android:name="android.permission.CAMERA" />
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
@@ -13,10 +21,13 @@
 	<uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
 	<!-- Required only if your app needs to access audio files that other apps created -->
 	<uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-	
 	<queries>
+		<package android:name="com.azure.authenticator" />
+		<package android:name="com.companyname.mauilmttemplate" />
+		<package android:name="com.microsoft.windowsintune.companyportal" />
 		<intent>
 			<action android:name="android.media.action.IMAGE_CAPTURE" />
 		</intent>
 	</queries>
+	<uses-sdk />
 </manifest>

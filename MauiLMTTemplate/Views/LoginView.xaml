@@ -12,5 +12,6 @@
         <Entry Text="{Binding UserName, Mode=TwoWay}" Placeholder="Username" />
         <Entry Text="{Binding Password, Mode=TwoWay}" IsPassword="True" />
         <Button Text="Login" Command="{Binding SignInCommand}" />
+        <Button Text="Login with Microsoft" Command="{Binding LoginMSALCommand}" />
     </StackLayout>
 </views:ContentPageBase>
