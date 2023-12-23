@@ -7,7 +7,12 @@
              xmlns:models="clr-namespace:MauiLMTTemplate.Models.Expenses"
              x:DataType="viewmodels:ExpenseViewModel"
              Title="ExpenseView">
-
+    
+    <views:ContentPageBase.ToolbarItems>
+        <ToolbarItem Text="Create New"
+                     Command="{Binding CreateNewExpenseCommand}" />
+    </views:ContentPageBase.ToolbarItems>
+    
     <VerticalStackLayout>
         <CollectionView ItemsSource="{Binding Expenses}"
                         SelectionMode="Single"

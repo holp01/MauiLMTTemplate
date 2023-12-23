@@ -60,5 +60,11 @@ namespace MauiLMTTemplate.ViewModels
 
             SelectedExpense = null;
         }
+
+        [RelayCommand]
+        private async Task CreateNewExpenseAsync()
+        {
+            await _navigationService.NavigateToAsync("NewExpense");
+        }
     }
 }

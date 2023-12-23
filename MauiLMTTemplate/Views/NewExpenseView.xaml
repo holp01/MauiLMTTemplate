@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<views:ContentPageBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLMTTemplate.Views.NewExpenseView"
+             xmlns:viewmodels="clr-namespace:MauiLMTTemplate.ViewModels"
+             xmlns:views="clr-namespace:MauiLMTTemplate.Views"
+             xmlns:models="clr-namespace:MauiLMTTemplate.Models.Expenses"
+             x:DataType="viewmodels:NewExpenseViewModel"
+             Title="NewExpenseView">
+    
+    <views:ContentPageBase.ToolbarItems>
+        <ToolbarItem Text="Add Attach"
+                     Command="{Binding AddAttachCommand}" />
+    </views:ContentPageBase.ToolbarItems>
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+
+            <Entry Placeholder="Expense Name"
+                   Text="{Binding NewExpense.Name, Mode=TwoWay}" />
+
+            <Entry Placeholder="Amount"
+                   Text="{Binding Amount, Mode=TwoWay}"
+                   Keyboard="Numeric" />
+
+            <Entry Placeholder="Description"
+                   Text="{Binding NewExpense.Description, Mode=TwoWay}" />
+
+            <!--<Button Text="Save Expense"
+                    Command="{Binding SaveExpenseCommand}" />-->
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</views:ContentPageBase>

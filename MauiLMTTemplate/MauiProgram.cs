@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using MauiLMTTemplate.Services.Authentication;
+using MauiLMTTemplate.Services.Azure;
 using MauiLMTTemplate.Services.Settings;
 using MauiLMTTemplate.ViewModels;
 using MauiLMTTemplate.Views;
@@ -41,6 +42,7 @@ namespace MauiLMTTemplate
             app.Services.AddSingleton<INavigationService, NavigationService>();
             app.Services.AddSingleton<ISettingsService, SettingsService>();
             app.Services.AddSingleton<IAuthenticationService, AuthenticationService>();
+            app.Services.AddSingleton<IAzureOCRService, AzureOCRService>();
 
             return app;
         }
@@ -56,6 +58,7 @@ namespace MauiLMTTemplate
             //Normally detail pages view models should be transient, it always depends on what you want the Injection to look like for your ViewModel
             app.Services.AddTransient<ProjectDetailViewModel>();
             app.Services.AddTransient<ExpenseDetailViewModel>();
+            app.Services.AddTransient<NewExpenseViewModel>();
 
             return app;
         }
@@ -69,6 +72,7 @@ namespace MauiLMTTemplate
             app.Services.AddTransient<ProjectDetailView>();
             app.Services.AddTransient<ExpenseView>();
             app.Services.AddTransient<ExpenseDetailView>();
+            app.Services.AddTransient<NewExpenseView>();
 
             return app;
         }

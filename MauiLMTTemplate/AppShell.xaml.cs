@@ -18,7 +18,9 @@ namespace MauiLMTTemplate
         {
             //Add your Views Routing here
             Routing.RegisterRoute("ProjectDetail", typeof(ProjectDetailView));
+
             Routing.RegisterRoute("ExpenseDetail", typeof(ExpenseDetailView));
+            Routing.RegisterRoute("NewExpense", typeof(NewExpenseView));
         }
     }
 }
