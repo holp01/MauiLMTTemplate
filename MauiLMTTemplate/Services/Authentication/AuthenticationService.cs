@@ -1,4 +1,6 @@
-﻿using Microsoft.Identity.Client;
+﻿using MauiLMTTemplate.Models.AppSettings;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +11,13 @@ namespace MauiLMTTemplate.Services.Authentication
 {
     public class AuthenticationService : IAuthenticationService
     {
+        private readonly IConfiguration _configuration;
+
         private IPublicClientApplication authenticationClient;
 
-        public AuthenticationService()
+        public AuthenticationService(IConfiguration configuration)
         {
-
+            _configuration = configuration;
         }
 
         public async Task<bool> LoginUserNamePassword(string username, string password)
@@ -25,15 +29,18 @@ namespace MauiLMTTemplate.Services.Authentication
 
         public async Task<AuthenticationResult> LoginMSALAsync(CancellationToken cancellationToken)
         {
-            authenticationClient = PublicClientApplicationBuilder.Create(Constants.ClientId)
-                .WithRedirectUri($"msal{Constants.ClientId}://auth")
+            var authenticationSection = _configuration.GetSection("Authentication").Get<AuthenticationConfig>();
+
+            authenticationClient = PublicClientApplicationBuilder.Create(authenticationSection.ClientId)
+                .WithRedirectUri($"msal{authenticationSection.ClientId}://auth")
                 .Build();
 
             AuthenticationResult result;
             try
             {
+
                 result = await authenticationClient
-                    .AcquireTokenInteractive(Constants.Scopes)
+                    .AcquireTokenInteractive(authenticationSection.Scopes)
 #if ANDROID
                    .WithParentActivityOrWindow(Platform.CurrentActivity)
 #endif

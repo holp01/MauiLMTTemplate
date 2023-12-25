@@ -4,8 +4,10 @@ using MauiLMTTemplate.Services.Azure;
 using MauiLMTTemplate.Services.Settings;
 using MauiLMTTemplate.ViewModels;
 using MauiLMTTemplate.Views;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Hosting;
+using System.Reflection;
 
 namespace MauiLMTTemplate
 {
@@ -14,6 +16,8 @@ namespace MauiLMTTemplate
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+
+            builder.ConfigureAppConfiguration();
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
@@ -33,6 +37,38 @@ namespace MauiLMTTemplate
 #endif
 
             return builder.Build();
+        }
+
+        public static MauiAppBuilder ConfigureAppConfiguration(this MauiAppBuilder app)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var baseNamespace = assembly.GetName().Name;
+
+            // Adjust the namespace and file names as needed.
+            string baseAppSettingsResource = $"{baseNamespace}.appsettings.json";
+            string devAppSettingsResource = $"{baseNamespace}.appsettings.Development.json";
+
+            // Add the base appsettings.json
+            using (var stream = assembly.GetManifestResourceStream(baseAppSettingsResource))
+            {
+                if (stream != null)
+                {
+                    app.Configuration.AddJsonStream(stream);
+                }
+            }
+
+#if DEBUG
+            // Add the development appsettings if in DEBUG mode.
+            using (var stream = assembly.GetManifestResourceStream(devAppSettingsResource))
+            {
+                if (stream != null)
+                {
+                    app.Configuration.AddJsonStream(stream);
+                }
+            }
+#endif
+
+            return app;
         }
 
         public static MauiAppBuilder RegisterServices(this MauiAppBuilder app)
