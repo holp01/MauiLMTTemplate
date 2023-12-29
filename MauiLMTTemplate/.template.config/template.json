@@ -10,5 +10,17 @@
     "type": "project"
   },
   "sourceName": "MauiLMTTemplate",
+  "symbols": {
+    "MauiLMTTemplate": {
+      "type": "parameter",
+      "dataType": "string",
+      "replaces": "MauiLMTTemplate"
+    },
+    "mauilmttemplate": {
+      "type": "parameter",
+      "dataType": "string",
+      "replaces": "mauilmttemplate"
+    }
+  },
   "version": "1.0.0"
 }
