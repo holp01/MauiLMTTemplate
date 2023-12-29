@@ -1,6 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/template",
-  "author": "Your Name",
+  "author": "Luis Teixeira",
   "classifications": [ "MAUI", "App" ],
   "identity": "YourCompany.MauiLMTTemplate",
   "name": "MAUI LMT Template",
@@ -10,16 +10,5 @@
     "type": "project"
   },
   "sourceName": "MauiLMTTemplate",
-  "symbols": {
-    "projectName": {
-      "type": "parameter",
-      "dataType": "string",
-      "replaces": "MauiLMTTemplate"
-    },
-    "MauiLMTTemplate": {
-      "type": "parameter",
-      "dataType": "string",
-      "replaces": "MauiLMTTemplate"
-    }
-  }
+  "version": "1.0.0"
 }
