@@ -64,6 +64,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Content Include=".template.config\template.json" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <EmbeddedResource Include="appsettings.Development.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </EmbeddedResource>
